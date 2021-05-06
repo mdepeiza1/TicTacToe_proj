@@ -15,5 +15,15 @@ function handleCellClick(clickedCellEvent) {
     }
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
+    handlePlayerChange();
+}
+function handlePlayerChange() {
+    if (currentPlayer == "X") {
+        currentPlayer = "O";
+    }
+    else {
+        currentPlayer = "X";
+    }
+    statusDisplay.innerHTML = currentPlayerTurn();
 }
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
