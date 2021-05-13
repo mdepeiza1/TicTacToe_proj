@@ -64,5 +64,12 @@ function handleResultValidation() {
         gameActive = false;
         return;
     }
+
+    let roundDraw = !gameState.includes("");
+    if (roundDraw) {
+        statusDisplay.innerHTML = 'The game is a draw!';
+        gameActive = false;
+        return;
+    }
 }
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
