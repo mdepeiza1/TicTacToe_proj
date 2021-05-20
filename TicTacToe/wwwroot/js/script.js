@@ -72,4 +72,12 @@ function handleResultValidation() {
         return;
     }
 }
+function handleRestartGame() {
+    for (let i = 0; i <= 7; i++) {
+        gameState[i] = "";
+    }
+    document.querySelectorAll('.cell')
+        .forEach(cell => cell.innerHTML = "");
+}
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
